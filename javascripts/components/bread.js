@@ -7,7 +7,7 @@ const breads = [
     {id: 'bread4', name: 'Rye', price: 2.00} 
 ]
 
-const breadChoices = () => {
+const breadOptions = () => {
     let domString2 = '';
     for (let i = 0; i < breads.length; i++) {
     domString2 += `
@@ -20,4 +20,4 @@ const breadChoices = () => {
     }
 };
 
-export default { breadChoices };
+export default { breadOptions };
