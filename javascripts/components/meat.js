@@ -22,5 +22,18 @@ const meatOptions = () => {
     }
 };
 
-export default { meatOptions };
+const getSelectedMeats = () => {
+    const selectedMeats = [];
+    const meatCheckboxes = document.getElementsByClassName('meat');
+    for (let j = 0; j < meatCheckboxes.length; j++) {
+        for (let k = 0; k < meats.length; k++) {
+            if (meatCheckboxes[j].checked & meatCheckboxes[j].id === meats[k].id) {
+                selectedMeats.push(meats[k]);
+            }
+        }
+    }
+    return selectedMeats;
+}
+export default { meatOptions, getSelectedMeats };
+
 
