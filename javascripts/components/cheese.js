@@ -37,4 +37,20 @@ const cheeseOptions = () => {
     
 }
 
-export default { cheeseOptions };
+const getSelectedCheeses = () => {
+    const selectedCheeses = [];
+    //get all cheese checkboxes
+    const cheeseCheckboxes = document.getElementsByClassName('cheese');
+    //keep the checked ones
+    for(let j = 0; j < cheeseCheckboxes.length; j++){
+        for(let k = 0; k < cheeses.length; k++){
+          if(cheeseCheckboxes[j].checked && cheeseCheckboxes[j].id === cheeses[k].id){
+            selectedCheeses.push(cheeses[k]);
+          }
+        }
+      }
+    //print to a new array
+    return selectedCheeses;
+}
+
+export default { cheeseOptions, getSelectedCheeses };

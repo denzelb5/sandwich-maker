@@ -10,17 +10,29 @@ const meats = [
 ];
 
 const meatOptions = () => {
-    let domString3 = '';
+    let domString = '';
     for (let i = 0; i < meats.length; i++) {
-        domString3 += ` 
+        domString += ` 
         <div class="form-group form-check">
     <input type="checkbox" class="form-check-input meat" id=${meats[i].id}>
     <label class="form-check-label" for=${meats[i].id}>${meats[i].name}</label>
   </div>
         `;
-        utilities.printToDom(domString3, 'meat-menu');
+        utilities.printToDom(domString, 'meat-menu');
     }
 };
 
-export default { meatOptions };
+const getSelectedMeats = () => {
+    const selectedMeats = [];
+    const meatCheckboxes = document.getElementsByClassName('meat');
+    for (let j = 0; j < meatCheckboxes.length; j++) {
+        for (let k = 0; k < meats.length; k++) {
+            if (meatCheckboxes[j].checked & meatCheckboxes[j].id === meats[k].id) {
+                selectedMeats.push(meats[k]);
+            }
+        }
+    }
+    return selectedMeats;
+}
+export default { meatOptions, getSelectedMeats };
 

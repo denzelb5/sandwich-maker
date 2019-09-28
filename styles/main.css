@@ -1,3 +1,18 @@
 body {
     background-color: lightcyan;
+    color: orangered
+}
+
+h1 {
+    text-align: center;
+    text-emphasis: bold;
+}
+
+#header-row {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    text-decoration: underline;
 }

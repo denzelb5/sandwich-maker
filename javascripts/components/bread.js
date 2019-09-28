@@ -8,15 +8,15 @@ const breads = [
 ]
 
 const breadChoices = () => {
-    let domString2 = '';
+    let domString = '';
     for (let i = 0; i < breads.length; i++) {
-    domString2 += `
+    domString += `
     <div class="form-group form-check">
     <input type="checkbox" class="form-check-input bread" id=${breads[i].id}>
     <label class="form-check-label" for=${breads[i].id}>${breads[i].name}</label>
   </div>
     `;
-    utilities.printToDom(domString2, 'bread-menu')
+    utilities.printToDom(domString, 'bread-menu')
     }
 };
 
