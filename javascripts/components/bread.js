@@ -8,16 +8,29 @@ const breads = [
 ]
 
 const breadOptions = () => {
-    let domString2 = '';
+    let domString = '';
     for (let i = 0; i < breads.length; i++) {
-    domString2 += `
+    domString += `
     <div class="form-group form-check">
     <input type="checkbox" class="form-check-input bread" id=${breads[i].id}>
     <label class="form-check-label" for=${breads[i].id}>${breads[i].name}</label>
   </div>
     `;
-    utilities.printToDom(domString2, 'bread-menu')
+    utilities.printToDom(domString, 'bread-menu')
     }
 };
 
-export default { breadOptions };
+const getSelectedBreads = () => {
+    const selectedBreads = [];
+    const checkboxBreads = document.getElementsByClassName('bread');
+    for (let j = 0; j < checkboxBreads.length; j++) {
+        for (let k = 0; k < breads.length; k++) {
+            if (checkboxBreads[j].checked && checkboxBreads[j].id === breads[k].id) {
+                selectedBreads.push(breads[k])
+            }
+        }
+    }
+    return selectedBreads;
+}
+
+export default { breadOptions, getSelectedBreads };
