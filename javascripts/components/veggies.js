@@ -13,7 +13,7 @@ const veggieOptions = () => {
     for (let i = 0; i < veggie.length; i++) {
         domString += `
         <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id=${veggie[i].id}>
+    <input type="checkbox" class="form-check-input veggies" id=${veggie[i].id}>
     <label class="form-check-label" for=${veggie[i].id}>${veggie[i].name}</label>
   </div>
         `;
@@ -21,4 +21,17 @@ const veggieOptions = () => {
     }
 }
 
-export default { veggieOptions }
+const getSelectedVeggies = () => {
+    const selectedVeggies = [];
+    const veggieCheckboxes = document.getElementsByClassName('veggies');
+    for (let j = 0; j < veggieCheckboxes.length; j++) {
+        for (let k = 0; k < veggie.length; k++) {
+            if (veggieCheckboxes[j].checked & veggieCheckboxes[j].id === veggie[k].id) {
+                selectedVeggies.push(veggie[k]);
+            }
+        }
+    }
+    return selectedVeggies;
+}
+
+export default { veggieOptions, getSelectedVeggies }
