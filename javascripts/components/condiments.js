@@ -20,4 +20,17 @@ const condimentOptions = () => {
     }
 }
 
-export default { condimentOptions};
+const getSelectedCondiments = () => {
+    const selectedCondiments = [];
+    const condimentCheckboxes = document.getElementsByClassName('condiment');
+    for (let j = 0; j < condimentCheckboxes.length; j++) {
+        for (let k = 0; k < condiment.length; k++) {
+            if (condimentCheckboxes[j].checked && condimentCheckboxes[j].id === condiment[k].id){
+                selectedCondiments.push(condiment[k])
+            }
+        }
+    }
+    return selectedCondiments;
+}
+
+export default { condimentOptions, getSelectedCondiments };
