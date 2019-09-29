@@ -27,12 +27,23 @@ const createOrderEvent = () => {
     createFinalOrder(finalSandwichChoices);
 }
 
+const clearMenuItems = () => {
+    const domString3 = '';
+    $('input[type=checkbox]').each(function() { 
+        this.checked = false; 
+    });
+    utilities.printToDom(domString3, 'final-order') 
+}
 
 const printOrderButton = () => {
     const domString = '<button id="order-button" class="btn btn-secondary">Make Sandwich</button>';
     utilities.printToDom(domString, 'order-button');
-    document.getElementById('order-button').addEventListener('click', createOrderEvent) 
+    document.getElementById('order-button').addEventListener('click', createOrderEvent)
+    document.getElementById('clear-button').addEventListener('click', clearMenuItems);
 };
+
+
+
 
 
 export default { printOrderButton };
