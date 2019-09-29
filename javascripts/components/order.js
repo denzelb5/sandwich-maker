@@ -22,7 +22,8 @@ const createOrderEvent = () => {
     const selectedMeats = meats.getSelectedMeats();
     const selectedBreads = bread.getSelectedBreads();
     const selectedVeggies = veggies.getSelectedVeggies();
-    const finalSandwichChoices = [...selectedBreads, ...selectedCheeses, ...selectedMeats, ...selectedVeggies]
+    const selectedCondiments = condiments.getSelectedCondiments();
+    const finalSandwichChoices = [...selectedBreads, ...selectedCheeses, ...selectedMeats, ...selectedVeggies, ...selectedCondiments]
     createFinalOrder(finalSandwichChoices);
 }
 
