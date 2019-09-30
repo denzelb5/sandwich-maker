@@ -8,8 +8,9 @@ HTML, CSS, Javascript
 Use this application to select sandwich toppings and get a final cost to your creation.
 
 ## Screenshots
-"./screenshots/sandwich-maker.png"
-"./screenshots/sandwich-maker2.png"
+"https://github.com/denzelb5/sandwich-maker/blob/master/Screenshots/sandwich-maker.png"
+
+"https://github.com/denzelb5/sandwich-maker/blob/master/Screenshots/sandwich-maker2.png"
 
 ## How to run
 * Clone down this project
