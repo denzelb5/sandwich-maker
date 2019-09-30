@@ -46,7 +46,7 @@ const cheeseOptions = () => {
         domString += `
         <div class="form-group form-check">
     <input type="checkbox" class="form-check-input cheese" id=${cheeses[i].id}>
-    <label class="form-check-label" for=${cheeses[i].id}>${cheeses[i].name}</label>
+    <label class="form-check-label" for=${cheeses[i].id}>${cheeses[i].name} $${cheeses[i].price.toFixed(2)}</label>
   </div>
         `;
         utilities.printToDom(domString, 'cheese-menu');
