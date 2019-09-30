@@ -9,9 +9,9 @@ const createFinalOrder = (items) => {
     const total = items.reduce((prev, curr) => prev + curr.price, 0);
     let domString2 = '';
     for (let i = 0; i < items.length; i++) {
-        domString2 += `<h2>${items[i].name} $${items[i].price.toFixed(2)}</h2>`
+        domString2 += `<h5>${items[i].name} $${items[i].price.toFixed(2)}</h5>`
     }
-    domString2 += `Total = $${total.toFixed(2)}`;
+    domString2 += `<h4>Total = $${total.toFixed(2)}</h4>`;
     utilities.printToDom(domString2, 'final-order')
 };
 
@@ -36,8 +36,9 @@ const clearMenuItems = () => {
 }
 
 const printOrderButton = () => {
-    const domString = '<button id="order-button" class="btn btn-secondary">Make Sandwich</button>';
-    utilities.printToDom(domString, 'order-button');
+    const domString = '<button id="order-button" class="btn btn-secondary">Make Sandwich</button> \
+        <input id="clear-button" class="btn btn-primary" type="reset" value="Clear">';
+    utilities.printToDom(domString, 'order-button-container');
     document.getElementById('order-button').addEventListener('click', createOrderEvent)
     document.getElementById('clear-button').addEventListener('click', clearMenuItems);
 };
